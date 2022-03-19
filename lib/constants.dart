@@ -27,3 +27,20 @@ const kLabelTextStyle = TextStyle(
 
 const kLargeButtonTextStyle =
     TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold);
+
+const kResultsTitleTextStyle = TextStyle(
+  fontSize: 50,
+  fontWeight: FontWeight.bold,
+);
+
+const kResultsTextStyle = TextStyle(
+    color: Color(0xff24d876), fontSize: 22, fontWeight: FontWeight.bold);
+
+const kBMITextStyle = TextStyle(
+  fontSize: 100,
+  fontWeight: FontWeight.bold,
+);
+
+const kBodyTextStyle = TextStyle(
+  fontSize: 22.0,
+);

@@ -4,6 +4,8 @@ import 'widgets/reusable_card.dart';
 import 'constants.dart';
 import 'widgets/round_icon_button.dart';
 import 'results_page.dart';
+import 'widgets/big_bottom_button.dart';
+import 'calculator_brain.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -213,22 +215,24 @@ class _InputPageState extends State<InputPage> {
           ),
           GestureDetector(
             onTap: () {
+              CalculatorBrain calc =
+                  CalculatorBrain(height: height, weight: weight);
+
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const ResultsPage();
+                    return ResultsPage(
+                      bmiResults: calc.calculateBMI(),
+                      interpretation: calc.getInterpretation(),
+                      resultsText: calc.getResult(),
+                    );
                   },
                 ),
               );
             },
-            child: Container(
-              child: const Center(
-                  child: Text('CALCULATE', style: kLargeButtonTextStyle)),
-              width: double.infinity,
-              color: kBottomContainerColor,
-              margin: const EdgeInsets.only(top: 10.0),
-              height: kBottomContainerHeight,
+            child: const BottomBigButton(
+              label: 'Calculate',
             ),
           )
         ],
