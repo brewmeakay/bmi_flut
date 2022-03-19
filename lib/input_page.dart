@@ -3,6 +3,7 @@ import 'widgets/card_icons.dart';
 import 'widgets/reusable_card.dart';
 import 'constants.dart';
 import 'widgets/round_icon_button.dart';
+import 'results_page.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -132,7 +133,7 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text(
+                          const Text(
                             'WEIGHT',
                             style: kLabelTextStyle,
                           ),
@@ -210,11 +211,25 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            width: double.infinity,
-            color: kBottomContainerColor,
-            margin: const EdgeInsets.only(top: 10.0),
-            height: kBottomContainerHeight,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) {
+                    return const ResultsPage();
+                  },
+                ),
+              );
+            },
+            child: Container(
+              child: const Center(
+                  child: Text('CALCULATE', style: kLargeButtonTextStyle)),
+              width: double.infinity,
+              color: kBottomContainerColor,
+              margin: const EdgeInsets.only(top: 10.0),
+              height: kBottomContainerHeight,
+            ),
           )
         ],
       ),

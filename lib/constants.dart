@@ -24,3 +24,6 @@ const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   color: kCardTextColor,
 );
+
+const kLargeButtonTextStyle =
+    TextStyle(fontSize: 25.0, fontWeight: FontWeight.bold);
