@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-
-const Color cardTextColor = Color(0xff8d8e98);
-const double iconSize = 80.0;
-const double sizedBoxHeight = 15.0;
-const double labelFontSize = 18.0;
+import 'package:bmi_flut/constants.dart';
 
 class CardIcons extends StatelessWidget {
   const CardIcons({Key? key, required this.iconData, required this.label})
@@ -17,17 +13,14 @@ class CardIcons extends StatelessWidget {
     return Column(mainAxisAlignment: MainAxisAlignment.center, children: [
       Icon(
         iconData,
-        size: iconSize,
+        size: kIconSize,
       ),
       const SizedBox(
-        height: sizedBoxHeight,
+        height: kSizedBoxHeight,
       ),
       Text(
         label,
-        style: const TextStyle(
-          fontSize: labelFontSize,
-          color: cardTextColor,
-        ),
+        style: kLabelTextStyle,
       )
     ]);
   }
